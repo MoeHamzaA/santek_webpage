@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             <Link to="/" className="inline-block">
               <Logo />
             </Link>
-            <p className="mt-4 text-gray-400 text-sm leading-relaxed">
+            <p className="mt-6 text-gray-400 text-sm leading-relaxed">
               Providing innovative tech consulting and recruitment solutions to help businesses find the best talent and technology solutions.
             </p>
             <div className="mt-6 flex space-x-4">

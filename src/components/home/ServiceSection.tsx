@@ -3,55 +3,55 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Users, 
+  UserCheck, 
+  Brain, 
   Briefcase, 
-  Code, 
-  LineChart, 
-  Server, 
-  ShieldCheck 
+  Rocket, 
+  Users2 
 } from 'lucide-react';
 
 const services = [
   {
     id: 1,
-    title: 'IT Staffing & Recruitment',
-    description: 'We connect top tech talent with innovative companies through our specialized recruitment services.',
+    title: 'Employer Partnerships',
+    description: 'Our employer partnership services are designed to help you find the perfect candidates for your organization.',
     icon: <Users className="w-12 h-12 text-primary-600" />,
-    path: '/services#recruitment',
+    path: '/services#employer-partnerships',
   },
   {
     id: 2,
-    title: 'Technology Consulting',
-    description: 'Strategic technology advisory services to optimize your business operations and drive growth.',
-    icon: <Briefcase className="w-12 h-12 text-primary-600" />,
-    path: '/services#consulting',
+    title: 'Talent Acquisition',
+    description: 'Finding the perfect job can be a daunting task. Our talent acquisition services are designed to simplify the process for you.',
+    icon: <UserCheck className="w-12 h-12 text-primary-600" />,
+    path: '/services#talent-acquisition',
   },
   {
     id: 3,
-    title: 'Software Development',
-    description: 'Custom software solutions tailored to your specific business needs and objectives.',
-    icon: <Code className="w-12 h-12 text-primary-600" />,
-    path: '/services#development',
+    title: 'AI Enhanced Recruiting & Pre-Screening',
+    description: 'We leverage cutting-edge AI tools to ensure that no candidates skills go unnoticed, delivering a curated shortlist of high-potential candidates.',
+    icon: <Brain className="w-12 h-12 text-primary-600" />,
+    path: '/services#ai-recruiting',
   },
   {
     id: 4,
-    title: 'Data Analytics',
-    description: 'Transform your data into actionable insights that drive informed business decisions.',
-    icon: <LineChart className="w-12 h-12 text-primary-600" />,
-    path: '/services#analytics',
+    title: 'AI Consulting Services',
+    description: 'We provide consulting services to help businesses optimize their environments with unique AI solutions that streamline recruitment processes and other departments.',
+    icon: <Briefcase className="w-12 h-12 text-primary-600" />,
+    path: '/services#ai-consulting',
   },
   {
     id: 5,
-    title: 'Cloud Solutions',
-    description: 'Scalable and secure cloud infrastructure design, migration, and management services.',
-    icon: <Server className="w-12 h-12 text-primary-600" />,
-    path: '/services#cloud',
+    title: 'Career Advancement',
+    description: 'For professionals looking to take the next step in their careers, we offer personalized career advancement services and guidance.',
+    icon: <Rocket className="w-12 h-12 text-primary-600" />,
+    path: '/services#career-advancement',
   },
   {
     id: 6,
-    title: 'Cybersecurity',
-    description: 'Protect your business with comprehensive security assessments and solutions.',
-    icon: <ShieldCheck className="w-12 h-12 text-primary-600" />,
-    path: '/services#security',
+    title: 'Diversity & Inclusion',
+    description: 'We are committed to fostering diverse and inclusive workplaces by connecting employers with talented professionals from diverse backgrounds.',
+    icon: <Users2 className="w-12 h-12 text-primary-600" />,
+    path: '/services#diversity-inclusion',
   },
 ];
 

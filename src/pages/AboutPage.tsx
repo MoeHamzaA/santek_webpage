@@ -138,7 +138,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ whyChooseUs = false }) => {
                   <div className="flex flex-col md:flex-row items-center gap-8">
                     <div className="w-48 h-48 rounded-full overflow-hidden flex-shrink-0">
                       <img
-                        src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300"
+                        src="/khan.png"
                         alt="Tauqeer Khan"
                         className="w-full h-full object-cover"
                       />

@@ -106,7 +106,7 @@ const industries = [
       'Clinical Systems Analysts',
       'Health Informatics Professionals'
     ],
-    image: 'https://images.pexels.com/photos/3846035/pexels-photo-3846035.jpeg?auto=compress&cs=tinysrgb&w=600'
+    image: '/healthcare.jpg'
   },
   {
     id: 'telecommunications',

@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 
 // We'll use company logos from a placeholder service
 const clients = [
-  { id: 1, name: 'Tech Corp', logo: 'https://images.pexels.com/photos/9822907/pexels-photo-9822907.png?auto=compress&cs=tinysrgb&dpr=1&w=150' },
-  { id: 2, name: 'Innovate Inc', logo: 'https://images.pexels.com/photos/12939807/pexels-photo-12939807.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=150' },
-  { id: 3, name: 'Digital Systems', logo: 'https://images.pexels.com/photos/9822732/pexels-photo-9822732.png?auto=compress&cs=tinysrgb&dpr=1&w=150' },
-  { id: 4, name: 'Future Solutions', logo: 'https://images.pexels.com/photos/9822689/pexels-photo-9822689.png?auto=compress&cs=tinysrgb&dpr=1&w=150' },
-  { id: 5, name: 'Cloud Dynamics', logo: 'https://images.pexels.com/photos/9822668/pexels-photo-9822668.png?auto=compress&cs=tinysrgb&dpr=1&w=150' },
-  { id: 6, name: 'Next Wave', logo: 'https://images.pexels.com/photos/9822656/pexels-photo-9822656.png?auto=compress&cs=tinysrgb&dpr=1&w=150' },
+  { id: 1, name: 'Innovashift', logo: '/innovashift.png' },
+  { id: 2, name: 'Desjardins', logo: '/Desjardins_Group_logo.svg.png' },
+  { id: 3, name: 'AK', logo: '/AK-Website-Logo3.png' },
+  { id: 4, name: 'Sun Life', logo: '/Sun-Life-Financial-Logo.png' },
 ];
 
 const testimonials = [
@@ -60,7 +58,7 @@ const ClientsSection: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
           {clients.map((client, index) => (
             <motion.div
               key={client.id}
@@ -68,13 +66,16 @@ const ClientsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
+              className="flex items-center justify-center"
             >
-              <img
-                src={client.logo}
-                alt={`${client.name} logo`}
-                className="max-h-16"
-              />
+              <div className="bg-primary-50 border border-primary-100 rounded-xl shadow-md p-6 flex items-center justify-center w-full h-28">
+                <img
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  className="max-h-16 max-w-[120px] object-contain"
+                  style={{ filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.10))' }}
+                />
+              </div>
             </motion.div>
           ))}
         </div>
