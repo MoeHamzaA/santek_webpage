@@ -9,6 +9,7 @@ import IndustriesPage from './pages/IndustriesPage';
 import ReferralsPage from './pages/ReferralsPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
+import PrivacyPage from './pages/PrivacyPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="industries" element={<IndustriesPage />} />
         <Route path="referrals" element={<ReferralsPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="privacy" element={<PrivacyPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

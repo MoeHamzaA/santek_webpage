@@ -138,7 +138,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ whyChooseUs = false }) => {
                   <div className="flex flex-col md:flex-row items-center gap-8">
                     <div className="w-48 h-48 rounded-full overflow-hidden flex-shrink-0">
                       <img
-                        src="/khan.png"
+                        src="/khan_update.png"
                         alt="Tauqeer Khan"
                         className="w-full h-full object-cover"
                       />
@@ -189,7 +189,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ whyChooseUs = false }) => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Contact Details</h3>
                       <p className="text-gray-700">
-                        Tel: <a href="tel:1-416-951-8616" className="text-primary-600 hover:text-primary-700">1-416-951-8616</a><br />
+                        Tel: <a href="tel:1-647-613-8616" className="text-primary-600 hover:text-primary-700">1-647-613-8616</a><br />
                         Email: <a href="mailto:info@santekmicrosolutions.com" className="text-primary-600 hover:text-primary-700">info@santekmicrosolutions.com</a>
                       </p>
                     </div>

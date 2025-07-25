@@ -164,22 +164,22 @@ const ReferralsPage: React.FC = () => {
               <tbody className="divide-y divide-gray-200">
                 <tr>
                   <td className="px-6 py-4">Entry-level Positions</td>
-                  <td className="px-6 py-4 font-medium">$1,000</td>
+                  <td className="px-6 py-4 font-medium">$300</td>
                   <td className="px-6 py-4">Paid after 90 days of employment</td>
                 </tr>
                 <tr className="bg-gray-50">
                   <td className="px-6 py-4">Mid-level Professionals</td>
-                  <td className="px-6 py-4 font-medium">$2,500</td>
+                  <td className="px-6 py-4 font-medium">$600</td>
                   <td className="px-6 py-4">Paid after 90 days of employment</td>
                 </tr>
                 <tr>
                   <td className="px-6 py-4">Senior/Lead Positions</td>
-                  <td className="px-6 py-4 font-medium">$5,000</td>
+                  <td className="px-6 py-4 font-medium">$900</td>
                   <td className="px-6 py-4">Paid after 90 days of employment</td>
                 </tr>
                 <tr className="bg-gray-50">
                   <td className="px-6 py-4">Executive/Director Roles</td>
-                  <td className="px-6 py-4 font-medium">$10,000</td>
+                  <td className="px-6 py-4 font-medium">$1,000</td>
                   <td className="px-6 py-4">50% at 90 days, 50% at 6 months</td>
                 </tr>
               </tbody>
