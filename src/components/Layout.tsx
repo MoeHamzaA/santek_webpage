@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './navigation/Navbar';
 import Footer from './Footer';
 import ScrollToTop from './common/ScrollToTop';
+import BackButton from './common/BackButton';
 
 const Layout: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,8 +26,9 @@ const Layout: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <Navbar isScrolled={isScrolled} />
+      <BackButton />
       <main className="flex-grow">
         <Outlet />
       </main>

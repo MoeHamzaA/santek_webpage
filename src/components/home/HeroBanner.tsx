@@ -21,7 +21,7 @@ const HeroBanner: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           Expert Tech Consulting & <br className="hidden md:block" />
-          <span className="text-secondary-400">Recruitment Solutions</span>
+          <span className="text-blue-300">Recruitment Solutions</span>
         </motion.h1>
         
         <motion.p 
@@ -41,7 +41,7 @@ const HeroBanner: React.FC = () => {
         >
           <Link 
             to="/services" 
-            className="px-8 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-medium rounded-md transition-colors duration-300 flex items-center justify-center"
+            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors duration-300 flex items-center justify-center"
           >
             Our Services
             <ChevronRight size={16} className="ml-1" />

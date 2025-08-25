@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const CtaSection: React.FC = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-secondary-600 to-secondary-500 text-white">
+    <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-500 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
@@ -36,7 +36,7 @@ const CtaSection: React.FC = () => {
           >
             <Link
               to="/contact"
-              className="px-8 py-3 bg-white text-secondary-600 hover:bg-gray-100 font-medium rounded-md transition-colors duration-300"
+              className="px-8 py-3 bg-white text-primary-600 hover:bg-gray-100 font-medium rounded-md transition-colors duration-300"
             >
               Contact Us Today
             </Link>

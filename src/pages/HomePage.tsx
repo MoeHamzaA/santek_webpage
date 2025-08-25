@@ -4,7 +4,7 @@ import ServiceSection from '../components/home/ServiceSection';
 import ClientsSection from '../components/home/ClientsSection';
 import IndustriesSection from '../components/home/IndustriesSection';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
-import CtaSection from '../components/home/CtaSection';
+
 
 const HomePage: React.FC = () => {
   useEffect(() => {
@@ -18,7 +18,6 @@ const HomePage: React.FC = () => {
       <WhyChooseUsSection />
       <ClientsSection />
       <IndustriesSection />
-      <CtaSection />
     </div>
   );
 };

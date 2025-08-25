@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ClientsSection from '../components/home/ClientsSection';
-import CtaSection from '../components/home/CtaSection';
+
 
 const clients = [
   {
@@ -166,7 +166,6 @@ const ClientsPage: React.FC = () => {
         </div>
       </section>
 
-      <CtaSection />
     </div>
   );
 };

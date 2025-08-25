@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -122,19 +122,19 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin size={18} className="text-secondary-500 mr-2 mt-1 flex-shrink-0" />
+                <MapPin size={18} className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
                 <span className="text-gray-400">
                   Toronto, ON, Canada
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone size={18} className="text-secondary-500 mr-2 flex-shrink-0" />
+                <Phone size={18} className="text-blue-500 mr-2 flex-shrink-0" />
                 <a href="tel:+14155551234" className="text-gray-400 hover:text-white transition-colors duration-300">
                   (416) 951-8616
                 </a>
               </li>
               <li className="flex items-center">
-                <Mail size={18} className="text-secondary-500 mr-2 flex-shrink-0" />
+                <Mail size={18} className="text-blue-500 mr-2 flex-shrink-0" />
                 <a href="mailto:info@santekmicro.com" className="text-gray-400 hover:text-white transition-colors duration-300">
                   info@santekmicro.com
                 </a>

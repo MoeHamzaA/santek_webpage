@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import Logo from '../common/Logo';
+import DarkModeToggle from '../common/DarkModeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavbarProps {
@@ -26,7 +27,8 @@ const navItems: NavItem[] = [
     path: '/about',
     dropdown: [
       { label: 'About Us', path: '/about' },
-      { label: 'Why Choose Us', path: '/why-choose-us' }
+      { label: 'Why Choose Us', path: '/why-choose-us' },
+      { label: 'Industries', path: '/industries' }
     ]
   },
   { 
@@ -34,7 +36,6 @@ const navItems: NavItem[] = [
     path: '/services',
   },
   { label: 'Clients', path: '/clients' },
-  { label: 'Industries', path: '/industries' },
   { label: 'Referrals', path: '/referrals' },
   { label: 'Contact', path: '/contact' },
 ];
@@ -68,22 +69,23 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
   return (
     <nav 
-      className={"fixed top-0 w-full z-50 bg-white shadow-md py-2 transition-all duration-300"}
+      className={"fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md py-2 transition-all duration-300"}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center" onClick={closeMenu}>
+        <div className="flex justify-between items-center relative">
+          {/* Logo on the left */}
+          <Link to="/" className="flex items-center z-10" onClick={closeMenu}>
             <Logo />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          {/* Centered Navigation - Absolutely positioned */}
+          <div className="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               <div key={item.label} className="relative group">
                 {item.dropdown ? (
                   <div className="relative">
                     <button 
-                      className="px-3 py-2 text-gray-700 hover:text-primary-600 font-medium rounded-md flex items-center space-x-1"
+                      className="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium rounded-md flex items-center space-x-1"
                       onClick={() => toggleDropdown(item.label)}
                     >
                       <span>{item.label}</span>
@@ -99,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -5 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-2 z-10"
+                          className="absolute left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-2 z-10"
                         >
                           {item.dropdown.map((dropdownItem) => (
                             <NavLink
@@ -107,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                               to={dropdownItem.path}
                               className={({ isActive }) => 
                                 `block px-4 py-2 text-sm ${
-                                  isActive ? 'text-primary-600 bg-gray-50' : 'text-gray-700 hover:bg-gray-50 hover:text-primary-600'
+                                  isActive ? 'text-primary-600 dark:text-primary-400 bg-gray-50 dark:bg-gray-700' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400'
                                 }`
                               }
                               onClick={() => {
@@ -128,8 +130,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     className={({ isActive }) => 
                       `px-3 py-2 rounded-md ${
                         isActive 
-                          ? 'text-primary-600 font-medium' 
-                          : 'text-gray-700 hover:text-primary-600 font-medium'
+                          ? 'text-primary-600 dark:text-primary-400 font-medium' 
+                          : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium'
                       }`
                     }
                     onClick={closeMenu}
@@ -139,9 +141,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Right side - Dark mode toggle and Get Started button */}
+          <div className="hidden lg:flex items-center space-x-4 z-10">
+            <DarkModeToggle />
             <Link 
               to="/contact" 
-              className="ml-4 px-5 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-md transition-colors duration-300"
+              className="px-5 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-md transition-colors duration-300 font-medium"
               onClick={closeMenu}
             >
               Get Started
@@ -149,13 +156,16 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-gray-700 hover:text-primary-600 focus:outline-none"
-            onClick={toggleMenu}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center space-x-2">
+            <DarkModeToggle />
+            <button
+              className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
+              onClick={toggleMenu}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -167,7 +177,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-gray-100"
+            className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-700"
           >
             <div className="container mx-auto px-4 py-3">
               {navItems.map((item) => (
@@ -175,7 +185,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   {item.dropdown ? (
                     <div>
                       <button 
-                        className="w-full flex justify-between items-center py-2 px-3 text-gray-700 hover:text-primary-600 font-medium"
+                        className="w-full flex justify-between items-center py-2 px-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
                         onClick={() => toggleDropdown(item.label)}
                       >
                         <span>{item.label}</span>
@@ -190,7 +200,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="pl-4 py-1 border-l-2 border-gray-100 ml-3"
+                            className="pl-4 py-1 border-l-2 border-gray-100 dark:border-gray-600 ml-3"
                           >
                             {item.dropdown.map((dropdownItem) => (
                               <NavLink
@@ -198,7 +208,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                                 to={dropdownItem.path}
                                 className={({ isActive }) => 
                                   `block py-2 px-3 text-sm ${
-                                    isActive ? 'text-primary-600' : 'text-gray-600 hover:text-primary-600'
+                                    isActive ? 'text-primary-600 dark:text-primary-400' : 'text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400'
                                   }`
                                 }
                                 onClick={closeMenu}
@@ -216,8 +226,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       className={({ isActive }) => 
                         `block py-2 px-3 ${
                           isActive 
-                            ? 'text-primary-600 font-medium' 
-                            : 'text-gray-700 hover:text-primary-600'
+                            ? 'text-primary-600 dark:text-primary-400 font-medium' 
+                            : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
                         }`
                       }
                       onClick={closeMenu}

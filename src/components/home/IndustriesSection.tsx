@@ -14,42 +14,42 @@ const industries = [
   {
     id: 1,
     name: 'Technology',
-    icon: <Cpu className="h-12 w-12 text-secondary-500" />,
+    icon: <Cpu className="h-12 w-12 text-blue-500" />,
     description: 'From startups to enterprise tech companies',
     path: '/industries#technology',
   },
   {
     id: 2,
     name: 'Healthcare',
-    icon: <Stethoscope className="h-12 w-12 text-secondary-500" />,
+    icon: <Stethoscope className="h-12 w-12 text-blue-500" />,
     description: 'Transforming patient care through technology',
     path: '/industries#healthcare',
   },
   {
     id: 3,
     name: 'Finance',
-    icon: <DollarSign className="h-12 w-12 text-secondary-500" />,
+    icon: <DollarSign className="h-12 w-12 text-blue-500" />,
     description: 'Fintech solutions and banking technology',
     path: '/industries#finance',
   },
   {
     id: 4,
     name: 'Retail',
-    icon: <ShoppingBag className="h-12 w-12 text-secondary-500" />,
+    icon: <ShoppingBag className="h-12 w-12 text-blue-500" />,
     description: 'Enhancing customer experiences through tech',
     path: '/industries#retail',
   },
   {
     id: 5,
     name: 'Manufacturing',
-    icon: <Building2 className="h-12 w-12 text-secondary-500" />,
+    icon: <Building2 className="h-12 w-12 text-blue-500" />,
     description: 'Optimizing operations with smart technology',
     path: '/industries#manufacturing',
   },
   {
     id: 6,
     name: 'Professional Services',
-    icon: <Briefcase className="h-12 w-12 text-secondary-500" />,
+    icon: <Briefcase className="h-12 w-12 text-blue-500" />,
     description: 'Supporting consulting and service firms',
     path: '/industries#services',
   },
@@ -80,7 +80,7 @@ const IndustriesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-primary-900/50 rounded-lg p-6 border border-primary-800 hover:border-secondary-500 transition-colors duration-300"
+              className="bg-blue-900/50 rounded-lg p-6 border border-blue-800 hover:border-blue-500 transition-colors duration-300"
             >
               <div className="mb-4">
                 {industry.icon}
@@ -89,7 +89,7 @@ const IndustriesSection: React.FC = () => {
               <p className="text-gray-300 mb-4">{industry.description}</p>
               <Link
                 to={industry.path}
-                className="text-secondary-400 hover:text-secondary-300 inline-flex items-center font-medium"
+                className="text-blue-400 hover:text-blue-300 inline-flex items-center font-medium"
               >
                 Learn More
                 <svg
